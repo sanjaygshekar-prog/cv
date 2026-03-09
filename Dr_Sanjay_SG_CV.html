@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Sanjay S Gottipamula – CV</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f1923;
+    --teal: #1a6b6b;
+    --teal-light: #e8f4f4;
+    --teal-mid: #2e9090;
+    --gold: #c8953a;
+    --muted: #6b7a8d;
+    --line: #dde4ec;
+    --bg: #f7f9fb;
+    --white: #ffffff;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 960px;
+    margin: 40px auto;
+    background: var(--white);
+    box-shadow: 0 4px 40px rgba(0,0,0,.10);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: #1a4a2e;
+    color: var(--white);
+    padding: 52px 56px 44px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 320px; height: 320px;
+    background: var(--teal);
+    opacity: .18;
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: 200px;
+    width: 200px; height: 200px;
+    background: var(--gold);
+    opacity: .10;
+    border-radius: 50%;
+  }
+  .header-inner { position: relative; z-index: 1; }
+
+  .title-row { display: flex; align-items: flex-end; gap: 20px; margin-bottom: 6px; }
+
+  .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 46px;
+    font-weight: 700;
+    letter-spacing: -.5px;
+    line-height: 1;
+    color: var(--white);
+  }
+  .credential-badge {
+    background: var(--gold);
+    color: var(--ink);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 2px;
+    margin-bottom: 4px;
+  }
+
+  .tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 300;
+    color: rgba(255,255,255,.65);
+    letter-spacing: .5px;
+    margin-bottom: 28px;
+  }
+
+  .contact-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 24px;
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,.80);
+    font-size: 13px;
+  }
+  .contact-item .icon {
+    width: 28px; height: 28px;
+    background: rgba(255,255,255,.10);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .contact-item a { color: inherit; text-decoration: none; }
+  .contact-item a:hover { color: var(--gold); }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    background: var(--teal);
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 40px;
+  }
+  .stat { text-align: center; color: var(--white); }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1;
+    display: block;
+  }
+  .stat-label {
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    opacity: .75;
+    margin-top: 2px;
+    display: block;
+  }
+  .stat-divider {
+    width: 1px;
+    background: rgba(255,255,255,.20);
+    align-self: stretch;
+  }
+
+  /* ── BODY LAYOUT ── */
+  .body-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: 1px;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    background: var(--teal-light);
+    padding: 40px 28px;
+    border-right: 1px solid var(--line);
+  }
+
+  .side-section { margin-bottom: 36px; }
+  .side-title {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--teal);
+    border-bottom: 2px solid var(--teal);
+    padding-bottom: 6px;
+    margin-bottom: 16px;
+  }
+
+  /* Overview */
+  .overview-text {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #3a4a5c;
+  }
+
+  /* Skills pills */
+  .skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .skill-pill {
+    background: var(--white);
+    border: 1px solid rgba(26,107,107,.25);
+    color: var(--teal);
+    font-size: 11.5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+
+  /* Education table */
+  .edu-item { margin-bottom: 14px; }
+  .edu-degree {
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--ink);
+  }
+  .edu-meta {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* Computer skills */
+  .cs-list { display: flex; flex-wrap: wrap; gap: 6px; }
+  .cs-tag {
+    background: var(--white);
+    border: 1px solid var(--line);
+    font-size: 11.5px;
+    color: var(--muted);
+    padding: 3px 9px;
+    border-radius: 3px;
+  }
+
+  /* Countries */
+  .countries-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .country-badge {
+    background: var(--teal);
+    color: var(--white);
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 2px;
+    letter-spacing: .5px;
+  }
+
+  /* Mentoring */
+  .mentor-text { font-size: 13px; color: #3a4a5c; line-height: 1.6; }
+
+  /* Personal */
+  .personal-table { width: 100%; font-size: 12.5px; }
+  .personal-table td { padding: 3px 0; vertical-align: top; }
+  .personal-table td:first-child { color: var(--muted); padding-right: 10px; white-space: nowrap; }
+
+  /* ── MAIN CONTENT ── */
+  .main { padding: 40px 44px; }
+
+  .section { margin-bottom: 40px; }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    border-bottom: 2px solid var(--line);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-title::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 22px;
+    background: var(--teal);
+    border-radius: 2px;
+  }
+
+  /* Key Accomplishments */
+  .accomplishment {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 14px;
+    align-items: flex-start;
+  }
+  .acc-bullet {
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+  .acc-text { font-size: 13.5px; line-height: 1.65; color: #2a3545; }
+  .acc-text strong { color: var(--teal); font-weight: 600; }
+
+  /* Experience */
+  .exp-item {
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+  }
+  .exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+  .exp-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 6px; }
+  .exp-title {
+    font-weight: 600;
+    font-size: 14.5px;
+    color: var(--ink);
+  }
+  .exp-org {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--teal);
+  }
+  .exp-period {
+    background: var(--teal-light);
+    border: 1px solid rgba(26,107,107,.2);
+    color: var(--teal);
+    font-size: 11.5px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .exp-desc { font-size: 13px; color: #3a4a5c; line-height: 1.7; }
+  .exp-desc strong { color: var(--ink); font-weight: 600; }
+
+  /* Publications */
+  .pub-item {
+    margin-bottom: 14px;
+    padding-left: 20px;
+    border-left: 3px solid var(--line);
+    font-size: 13px;
+    line-height: 1.65;
+    color: #3a4a5c;
+    transition: border-color .2s;
+  }
+  .pub-item:hover { border-color: var(--teal); }
+  .pub-item strong { color: var(--teal); }
+
+  /* Presentations */
+  .pres-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    color: #3a4a5c;
+  }
+  .pres-num {
+    width: 22px; height: 22px;
+    background: var(--teal);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px;
+    font-weight: 600;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .invited-tag {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--white);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 1px 6px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    margin-right: 4px;
+  }
+
+  /* Training */
+  .training-grid { display: grid; grid-template-columns: 72px 1fr; gap: 0; }
+  .training-row { display: contents; }
+  .training-year {
+    font-weight: 600;
+    font-size: 12px;
+    color: var(--teal);
+    padding: 7px 14px 7px 0;
+    border-top: 1px solid var(--line);
+  }
+  .training-desc {
+    font-size: 13px;
+    color: #3a4a5c;
+    padding: 7px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: #1a4a2e;
+    color: rgba(255,255,255,.5);
+    text-align: center;
+    font-size: 12px;
+    padding: 16px;
+    letter-spacing: .5px;
+  }
+  .footer span { color: var(--gold); }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: white; font-size: 12px; }
+    .page { box-shadow: none; margin: 0; max-width: 100%; }
+    .stats-bar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .sidebar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  @media (max-width: 720px) {
+    .body-grid { grid-template-columns: 1fr; }
+    .sidebar { border-right: none; border-bottom: 1px solid var(--line); }
+    .header { padding: 36px 28px 28px; }
+    .name { font-size: 34px; }
+    .stats-bar { flex-wrap: wrap; gap: 16px; }
+    .stat-divider { display: none; }
+    .main { padding: 28px 24px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-inner">
+      <div class="credential-badge">Ph.D · M.Tech · Certified Scrum Master</div>
+      <div class="name">Dr. Sanjay S Gottipamula</div>
+      <div class="tagline">Cell &amp; Gene Therapy Leader · Bioprocess Innovator · Clinical Manufacturing Expert</div>
+      <div class="contact-strip">
+        <div class="contact-item">
+          <div class="icon">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 01.22 2.84 2 2 0 012.2 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l.66-.66a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          (+91) 8095140867
+        </div>
+        <div class="contact-item">
+          <div class="icon">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <a href="mailto:sanjaygshekar@gmail.com">sanjaygshekar@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <div class="icon">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          Boduppal, Hyderabad, India – 500092
+        </div>
+        <div class="contact-item">
+          <div class="icon">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          Updated: March 2026
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat"><span class="stat-num">20+</span><span class="stat-label">Years Experience</span></div>
+    <div class="stat-divider"></div>
+    <div class="stat"><span class="stat-num">23+</span><span class="stat-label">Publications</span></div>
+    <div class="stat-divider"></div>
+    <div class="stat"><span class="stat-num">30+</span><span class="stat-label">cGMP Audits</span></div>
+    <div class="stat-divider"></div>
+    <div class="stat"><span class="stat-num">55%</span><span class="stat-label">Cost Reduction</span></div>
+    <div class="stat-divider"></div>
+    <div class="stat"><span class="stat-num">10+</span><span class="stat-label">Staff Trained</span></div>
+  </div>
+
+  <!-- BODY GRID -->
+  <div class="body-grid">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="side-section">
+        <div class="side-title">Professional Overview</div>
+        <p class="overview-text">A competent professional with 20+ years of rich industrial experience in manufacturing of stem cell–based biologics. Proven leadership in process development, scale-up, technology transfer, and GMP manufacturing. Strong scientific acumen with global project management experience.</p>
+      </div>
+
+      <div class="side-section">
+        <div class="side-title">Core Skills</div>
+        <div class="skill-list">
+          <span class="skill-pill">Process Development</span>
+          <span class="skill-pill">Cell Culture Bioprocessing</span>
+          <span class="skill-pill">Technology Transfer</span>
+          <span class="skill-pill">Scale-Up Studies</span>
+          <span class="skill-pill">Bioreactor Validation</span>
+          <span class="skill-pill">Downstream Processing</span>
+          <span class="skill-pill">cGMP Compliance</span>
+          <span class="skill-pill">MSC Therapeutics</span>
+          <span class="skill-pill">CAR-T Cells</span>
+          <span class="skill-pill">NK Cells</span>
+          <span class="skill-pill">mAbs &amp; Vaccines</span>
+          <span class="skill-pill">Cross-functional Leadership</span>
+        </div>
+      </div>
+
+      <div class="side-section">
+        <div class="side-title">Education</div>
+        <div class="edu-item">
+          <div class="edu-degree">Ph.D – Regenerative Medicine</div>
+          <div class="edu-meta">Manipal University · 2014</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">M.Tech – Biotechnology</div>
+          <div class="edu-meta">JNTU, Hyderabad · 2008</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">M.Sc – Zoology</div>
+          <div class="edu-meta">Annamalai University · 2003</div>
+        </div>
+      </div>
+
+      <div class="side-section">
+        <div class="side-title">Computer Skills</div>
+        <div class="cs-list">
+          <span class="cs-tag">AI Tools</span>
+          <span class="cs-tag">MS Office</span>
+          <span class="cs-tag">SCADA</span>
+          <span class="cs-tag">LIMS</span>
+          <span class="cs-tag">Zotero</span>
+          <span class="cs-tag">ENDNOTE</span>
+          <span class="cs-tag">Cell Profiler</span>
+          <span class="cs-tag">Image J</span>
+          <span class="cs-tag">Python</span>
+        </div>
+      </div>
+
+      <div class="side-section">
+        <div class="side-title">International Exposure</div>
+        <div class="countries-row">
+          <span class="country-badge">🇲🇾 Malaysia</span>
+          <span class="country-badge">🇹🇭 Thailand</span>
+        </div>
+      </div>
+
+      <div class="side-section">
+        <div class="side-title">Mentoring</div>
+        <p class="mentor-text">Doctoral advisory member – Rajiv Gandhi University of Health Sciences. Guided 3 graduate &amp; 3 PG MSc project students (Manipal). Reviewed 1 doctoral student's work.</p>
+      </div>
+
+      <div class="side-section">
+        <div class="side-title">Personal Profile</div>
+        <table class="personal-table">
+          <tr><td>Languages</td><td>English, Hindi, Telugu</td></tr>
+          <tr><td>Location</td><td>Hyderabad, Telangana, India</td></tr>
+        </table>
+      </div>
+
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- KEY ACCOMPLISHMENTS -->
+      <div class="section">
+        <div class="section-title">Key Accomplishments</div>
+        <div class="accomplishment"><div class="acc-bullet"></div><div class="acc-text"><strong>Operational Excellence:</strong> Streamlined operational efficiency and process deliverables across multiple projects.</div></div>
+        <div class="accomplishment"><div class="acc-bullet"></div><div class="acc-text"><strong>Leadership:</strong> Engaged and drove key external and internal stakeholders aligned with long-term organizational vision.</div></div>
+        <div class="accomplishment"><div class="acc-bullet"></div><div class="acc-text"><strong>Translational Impact:</strong> Validated efficacy demonstrating <strong>&gt;40% accelerated epithelialization</strong> and <strong>30% reduction in scarring</strong> vs. traditional grafts.</div></div>
+        <div class="accomplishment"><div class="acc-bullet"></div><div class="acc-text"><strong>Clinical Manufacturing &amp; Scale-Up:</strong> Spearheaded end-to-end development of a first-of-its-kind <strong>tissue-engineered skin bio-construct</strong> for complex wound healing, burns, and chronic leg ulcers.</div></div>
+        <div class="accomplishment"><div class="acc-bullet"></div><div class="acc-text"><strong>Clinical Manufacturing:</strong> Successfully established production systems for <strong>StempeuCel</strong> from proof-of-concept to Phase III trials.</div></div>
+        <div class="accomplishment"><div class="acc-bullet"></div><div class="acc-text"><strong>Cost Efficiency:</strong> Achieved <strong>55% cost reduction</strong> in production through process optimization and scalability improvements.</div></div>
+        <div class="accomplishment"><div class="acc-bullet"></div><div class="acc-text"><strong>Stem Cell-Based Acellular Cosmetics:</strong> Developed cutting-edge cosmetic products leveraging stem cell–derived biologics for skin regeneration and anti-aging.</div></div>
+        <div class="accomplishment"><div class="acc-bullet"></div><div class="acc-text"><strong>New Technology Introduction:</strong> Introduced perfusion bioreactor technology (Fibra-Cel®) for high-density EPO-producing CHO cells.</div></div>
+        <div class="accomplishment"><div class="acc-bullet"></div><div class="acc-text"><strong>Regulatory Compliance:</strong> Conducted 30+ cGMP compliance audits, vendor qualification audits, and assisted in CMC documentation for regulatory submissions.</div></div>
+      </div>
+
+      <!-- PROFESSIONAL EXPERIENCE -->
+      <div class="section">
+        <div class="section-title">Professional Experience</div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <div class="exp-org">C-SRPL Pvt. Ltd., Bangalore</div>
+              <div class="exp-title">Head – Cell and Gene Therapy Operations</div>
+            </div>
+            <div class="exp-period">Sep 2025 – Present</div>
+          </div>
+          <div class="exp-desc">Led establishment of a fully compliant <strong>cGMP laboratory</strong> and quality systems for advanced cell and gene therapy programs. Directed innovative pipelines for <strong>MSC-based therapeutics</strong> targeting neurological indications (spinal cord injury), alongside acellular secretome/exosome-based neuroregenerative products. Collaborating with senior leadership to deliver cross-functional project management advancing next-generation regenerative therapies.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <div class="exp-org">Hoynoza Technologies Pvt. Ltd., Bangalore</div>
+              <div class="exp-title">Head – Cell and Gene Therapy Operations</div>
+            </div>
+            <div class="exp-period">Jan 2024 – Sep 2025</div>
+          </div>
+          <div class="exp-desc">Led strategic planning and execution of cellular therapeutics (MSCs and CAR-T Cells) and development of stem cell–based acellular cosmetics. Oversaw cross-functional teams ensuring cGMP and regulatory compliance. Co-created long-term organizational vision with the CEO.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <div class="exp-org">Cell Biopeutics Resources Sbn Bhd – Kuala Lumpur, Malaysia</div>
+              <div class="exp-title">Chief Operating Officer</div>
+            </div>
+            <div class="exp-period">Jan 2023 – Dec 2023</div>
+          </div>
+          <div class="exp-desc">Responsible for strategic planning and operational execution. Worked closely with C-suite to develop company vision, mission, and strategic goals. Oversaw organizational operations, hiring, staff development, and performance management. Identified and pursued new business opportunities and partnerships for organizational growth.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <div class="exp-org">Independent Consultant</div>
+              <div class="exp-title">cGMP &amp; Technical Consultant</div>
+            </div>
+            <div class="exp-period">Nov 2020 – Jan 2023</div>
+          </div>
+          <div class="exp-desc">Audited 30+ organizations for cGMP compliance, due diligence, and vendor qualification. Reviewed facility layouts, validated processes, and provided technical consultancy to start-ups developing cell-based therapeutics systems.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <div class="exp-org">Sri Research for Tissue Engineering Pvt. Ltd, Bangalore</div>
+              <div class="exp-title">Sr. Scientist – Process Development</div>
+            </div>
+            <div class="exp-period">Aug 2014 – Oct 2020</div>
+          </div>
+          <div class="exp-desc">Managed cGMP manufacturing facility and clinical-grade cell therapy products. Led a team of 5+ executives for clinical manufacturing, product development, and scale-up. Developed a <strong>tissue-engineered skin bio-construct</strong> for urethral stricture, burns, and leg ulcers.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <div class="exp-org">Stempeutics Research Pvt. Ltd, Manipal, Karnataka</div>
+              <div class="exp-title">Manager – Production</div>
+            </div>
+            <div class="exp-period">Aug 2007 – Jul 2014</div>
+          </div>
+          <div class="exp-desc">Managed cGMP production unit for <strong>StempeuCel</strong>. Led technology transfer initiatives, trained 10+ staff in cGMP protocols, and ensured process consistency. Managed a team of 10 for implementation and monitoring of production systems and regulatory compliance.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <div class="exp-org">Zenotech Lab Pvt. Ltd, Hyderabad</div>
+              <div class="exp-title">Research Associate – Mammalian Cell Culture</div>
+            </div>
+            <div class="exp-period">Aug 2006 – Aug 2007</div>
+          </div>
+          <div class="exp-desc">Managed a team of 10 for process optimization and scale-up of mAb production from lab scale to 100 L and 500 L bioreactors. Coordinated cell culture technology transfer to cGMP production facility.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <div class="exp-org">Shantha Biotech Pvt. Ltd, Hyderabad</div>
+              <div class="exp-title">Research Associate – Cell Culture</div>
+            </div>
+            <div class="exp-period">Jun 2000 – Aug 2006</div>
+          </div>
+          <div class="exp-desc">Led group of 3 research assistants and 10 non-technical staff for cell culture process development. Established 1.2 L perfusion technology for EPO production and led primary downstream process development.</div>
+        </div>
+      </div>
+
+      <!-- PUBLICATIONS -->
+      <div class="section">
+        <div class="section-title">Select Publications <span style="font-size:14px;font-family:'DM Sans';font-weight:400;color:var(--muted)">(23+ Total)</span></div>
+        <div class="pub-item"><strong>Sanjay G</strong> et al. Microbial Systems Enhancing CAR-Based Therapies: A Synthetic Biology Paradigm for Next-Generation Cancer Immunotherapy. <em>Curr Microbiol.</em> 2025; 83(2):106. PMID: 41454921.</div>
+        <div class="pub-item">Singdevsachan SK, <strong>Gottipamula SS</strong> et al. Multi-attribute method for simultaneous monitoring of critical quality attributes in monoclonal antibodies. <em>Anal Bioanal Chem.</em> 2025. PMID: 41261220.</div>
+        <div class="pub-item"><strong>Gottipamula S</strong>, Sridhar KN. Large-scale Isolation, Expansion and Characterization of Human Amniotic Epithelial Cells. <em>Int J Stem Cells.</em> 2018;11(1):87-95. PMID: 29843193.</div>
+        <div class="pub-item"><strong>Gottipamula S</strong>, Saraswat SK, Sridhar KN. Comparative study of isolation, expansion and characterization of epithelial cells. <em>Cytotherapy.</em> 2017;19(2):263-271. PMID: 27894881.</div>
+        <div class="pub-item">Chullikana A, Majumdar AS, <strong>Gottipamula S</strong> et al. Randomized, double-blind, phase I/II study of IV allogeneic mesenchymal stromal cells in acute myocardial infarction. <em>Cytotherapy.</em> 2014. PMID: 25484310.</div>
+      </div>
+
+      <!-- PRESENTATIONS -->
+      <div class="section">
+        <div class="section-title">Scientific Presentations</div>
+        <div class="pres-item"><div class="pres-num">1</div><div>Advancement of Cell &amp; Gene Therapy – strategic networking meeting. <em>Bangkok, Thailand</em>, 2025.</div></div>
+        <div class="pres-item"><div class="pres-num">2</div><div><span class="invited-tag">Invited</span> Cell and Gene Therapy – Opportunities &amp; Clinical Translation. <em>Acharya Bangalore B School</em>, June 2025.</div></div>
+        <div class="pres-item"><div class="pres-num">3</div><div>Innovative cell-based therapies for OA &amp; cartilage repair – series at leading universities. <em>KL, Malaysia</em>, 2023.</div></div>
+        <div class="pres-item"><div class="pres-num">4</div><div><span class="invited-tag">Invited</span> Principles &amp; trends of stem cell bioprocessing engineering – SYMBIOT (IEBT) Oct 2009, <em>MIT Biotech, Manipal University</em>.</div></div>
+        <div class="pres-item"><div class="pres-num">5</div><div>Large-scale expansion of bone marrow MSCs in serum-free conditions – <em>Scientific Committee Meeting, Manipal University</em>, 2012.</div></div>
+      </div>
+
+      <!-- TRAINING & CERTIFICATIONS -->
+      <div class="section">
+        <div class="section-title">Training &amp; Certifications</div>
+        <div class="training-grid">
+          <div class="training-row"><div class="training-year">2025</div><div class="training-desc">Python Tool for Process Development; AI Tools for Leadership Mastery</div></div>
+          <div class="training-row"><div class="training-year">2024</div><div class="training-desc">Certified Scrum Master – cross-functional collaboration &amp; dynamic environment efficiency</div></div>
+          <div class="training-row"><div class="training-year">2010–14</div><div class="training-desc">Ph.D – Sponsored by Stempeutics (Young Scientist-Employee Program award)</div></div>
+          <div class="training-row"><div class="training-year">2012</div><div class="training-desc">Certified Internal Auditor, ISO 9001:2008; Outbound Management Learning (OBL) – Pegasus Institute</div></div>
+          <div class="training-row"><div class="training-year">2011</div><div class="training-desc">Frontline Leadership Program (Urjja) – Bangalore</div></div>
+          <div class="training-row"><div class="training-year">2010</div><div class="training-desc">GMP Process &amp; Practices – Mabpharma, Cipla; Situational Leadership (Laurate Global); OBL – Pegasus Institute</div></div>
+          <div class="training-row"><div class="training-year">2008</div><div class="training-desc">Certified Internal Auditor, ISO 9001:2000</div></div>
+          <div class="training-row"><div class="training-year">2007</div><div class="training-desc">Leadership Learning Program – Manipal County, Bangalore</div></div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    I hereby declare that the above information is true and correct to the best of my knowledge. &nbsp;|&nbsp; <span>Dr. Sanjay S Gottipamula</span> &nbsp;|&nbsp; Dated: 5 March 2026
+  </div>
+
+</div>
+</body>
+</html>
